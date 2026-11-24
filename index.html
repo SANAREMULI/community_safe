@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Community Safe – Maasai Mara</title>
+<meta name="description" content="Report emergencies, get early warnings and stay safe online in the Maasai Mara. English, Kiswahili, Maa.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo" aria-hidden="true">◈</span> Community Safe</div>
+  <nav id="nav" aria-label="Main">
+    <button data-tab="report" class="on">Report</button>
+    <button data-tab="chat">Chat</button>
+    <button data-tab="alerts">Warnings</button>
+    <button data-tab="track">Track</button>
+    <button data-tab="cyber">Cyber safety</button>
+  </nav>
+  <a class="sos" href="tel:999">SOS 999 / 112</a>
+</header>
+
+<main>
+<section id="report" class="tab on">
+  <div class="hero"><p class="eyebrow">Maasai Mara · Community alerts</p>
+  <h1>Raise the alarm in seconds.</h1>
+  <p>Report fire, flood, wildlife conflict or security threats. Elders, scouts and authorities are notified.</p></div>
+  <div class="grid">
+  <form id="rform" class="card" novalidate>
+    <fieldset><legend>Type of emergency</legend>
+      <div class="chips" id="cats"></div></fieldset>
+    <label>Village
+      <select id="village"></select></label>
+    <label>Nearby landmark <input id="landmark" maxlength="80" autocomplete="off"></label>
+    <label>What is happening? <textarea id="desc" rows="3" maxlength="400"></textarea></label>
+    <label>Phone number <input id="phone" inputmode="tel" maxlength="16" placeholder="07XX XXX XXX"></label>
+    <label class="inline"><input type="checkbox" id="gps"> Attach my GPS location</label>
+    <p id="rerr" class="err" role="alert"></p>
+    <button class="primary" type="submit">Send emergency report</button>
+  </form>
+  <aside class="card sms">
+    <h2>No internet? Use SMS</h2>
+    <code>CATEGORY#VILLAGE#LANDMARK#WHAT HAPPENED</code>
+    <p>e.g. <code>WILDLIFE#Talek#Borehole#Elephants in maize farm</code></p>
+    <p>Warnings: <code>JOIN#YourVillage</code><br>Status: <code>STATUS#MS-012</code></p>
+    <p>Basic phone? Dial the USSD menu and follow the steps.</p>
+    <p class="muted">Your live SMS preview:</p>
+    <code id="smsprev" class="prev">—</code>
+  </aside></div>
+</section>
+
+<section id="chat" class="tab">
+  <h1>Chat</h1><p class="muted">English · Kiswahili · Maa — reports and safety advice</p>
+  <div class="card chatbox"><div id="log" aria-live="polite"></div>
+    <div id="sugg" class="chips"></div>
+    <form id="cform"><input id="cin" maxlength="300" placeholder="Write in any language…" autocomplete="off"><button class="primary">Send</button></form></div>
+  <p class="muted">Offline helper with built-in advice. It can make mistakes. In danger call 999 or 112.</p>
+</section>
+
+<section id="alerts" class="tab">
+  <h1>Early warnings</h1>
+  <div id="alist" class="list"></div>
+  <form id="jform" class="card row">
+    <label>Get warnings by SMS <select id="jvillage"></select></label>
+    <button class="primary">Subscribe</button><p id="jmsg" class="ok"></p>
+  </form>
+</section>
+
+<section id="track" class="tab">
+  <h1>Track a report</h1>
+  <form id="tform" class="card row"><label>Report ID <input id="tid" placeholder="MS-012" maxlength="10"></label><button class="primary">Check</button></form>
+  <div id="tres" class="list"></div>
+  <h2>Your reports on this device</h2><div id="mine" class="list"></div>
+</section>
+
+<section id="cyber" class="tab">
+  <h1>Cyber security alerts</h1>
+  <p class="muted">Fake alerts, SMS scams and mobile-money fraud can cost lives and money. Check before you trust or forward.</p>
+  <div id="cfeed" class="list"></div>
+  <div class="grid">
+  <form id="scan" class="card"><h2>Message / link checker</h2>
+    <textarea id="stext" rows="4" maxlength="600" placeholder="Paste a suspicious SMS, WhatsApp message or link"></textarea>
+    <button class="primary">Check message</button><div id="sres" class="verdict" role="status"></div></form>
+  <div class="card"><h2>Protect yourself</h2><ul class="tips">
+    <li>Never share your M-PESA PIN, OTP or ID number. Staff never ask for it.</li>
+    <li>Only trust warnings that come from your village SMS number or a known elder or scout.</li>
+    <li>Report a fake alert by sending <code>SCAM#YourVillage#what you got</code>.</li>
+    <li>Do not click short links in unexpected messages.</li>
+    <li>Use a screen lock and keep your phone updated.</li>
+    <li>Staff: use a unique password and two-step sign-in.</li></ul></div></div>
+</section>
+</main>
+
+<footer>Community Safe is a coordination aid, not a replacement for national emergency services. In life-threatening danger call 999 or 112.</footer>
+<script src="app.js"></script>
+</body></html>
