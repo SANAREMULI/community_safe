@@ -22,4 +22,4 @@ The site is a static front-end demo. Reports, subscriptions and tracking data st
 Open `index.html`, or serve the folder: `python3 -m http.server 8080`.
 
 ## Status
-Front-end demo. Data is stored in the browser (`localStorage`). The GitHub Pages workflow deploys updates from `main`. For operational use, connect an SMS/USSD gateway (e.g. Africa's Talking) and a backend with authentication (see SECURITY.md).
+Front-end demo. Data is stored in the browser (`localStorage`). Set the repository's Pages source to **GitHub Actions** in Settings → Pages; after that, pushes to `main` deploy automatically, and the workflow can also be started manually from Actions. For operational use, connect an SMS/USSD gateway (e.g. Africa's Talking) and a backend with authentication (see SECURITY.md).
